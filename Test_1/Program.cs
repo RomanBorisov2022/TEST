@@ -10,5 +10,34 @@
 
 
 
-Console.CLear();
+Console.Clear();  //очистка консоли
 
+Console.WriteLine("Введите текст: "); // запрос у пользователя
+
+string userInput = Console.ReadLine(); // ввод от пользователя
+
+string[] array = userInput.Split(' ', '.'); // создание массива из разделенных строк с помощью функции сплит
+
+string[] newArray = new string[GetCount(array)]; // создание нового массива
+
+int i = 0;            // цикл, где кладем элемент меньший либо равный по длинне согласно условию в новый массив
+foreach (string el in array)
+{
+    if (el.Length <= 3) 
+    {
+        newArray[i] = el;
+        i++;
+    }
+}
+
+Console.WriteLine(String.Join(" ", newArray));
+
+int GetCount(string[] arr) // метод для нахождения числа элементов в будущем массиве
+{
+    int count = 0;
+    foreach (string el in arr)
+    {
+        if (el.Length <= 3) count++;
+    }
+    return count;
+}
