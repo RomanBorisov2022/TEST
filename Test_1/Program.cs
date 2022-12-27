@@ -30,7 +30,7 @@ foreach (string el in array)
     }
 }
 
-Console.WriteLine(String.Join(" ", newArray));
+Console.WriteLine(String.Join(" ", newArray)); //  вывод массива
 
 int GetCount(string[] arr) // метод для нахождения числа элементов в будущем массиве
 {
